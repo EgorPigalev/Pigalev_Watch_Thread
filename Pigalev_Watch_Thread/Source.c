@@ -91,7 +91,7 @@ void ShowHoursMileSecond() // Вывод часов в милисекундах
 		printf("%d:%d:%d:%d\n", hour4, minute4, second4, milesecond4);
 		unsigned int end_time = clock();
 		unsigned int search_time = end_time - start_time;
-		Sleep(100 - search_time);
+		Sleep(94 - search_time);
 	}
 }
 
@@ -188,6 +188,10 @@ void main()
 		case(4):
 			SuspendThread(hThread[1]);
 			system("cls");
+			hour4 = 0;
+			minute4 = 0;
+			second4 = 0;
+			milesecond4 = 0;
 			printf("Включен режим таймера\n");
 			while (1)
 			{
@@ -203,6 +207,10 @@ void main()
 			HANDLE b = CreateThread(NULL, 0, GetTimer, NULL, 0, 0);
 			WaitForSingleObject(b, INFINITE);
 			CloseHandle(b);
+			hour4 = 0;
+			minute4 = 0;
+			second4 = 0;
+			milesecond4 = 0;
 			SuspendThread(hThread[2]);
 			SuspendThread(hThread[3]);
 			printf("Таймерное время вышло!\n");
